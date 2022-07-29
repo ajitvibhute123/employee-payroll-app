@@ -1,6 +1,8 @@
 package com.bridgelabz.employeepayrollapp.dto;
 
-public class ResponseDTO {
+import lombok.Data;
+/*Use Lombok Library to auto generate getters and setters for the DTO*/
+public @Data class  ResponseDTO {
     private String message;
     private Object data;
 
@@ -9,19 +11,4 @@ public class ResponseDTO {
         this.data=data;
     }
 
-    public String getMessage() {
-        return message;
-    }
-
-    public Object getData() {
-        return data;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
-    }
-
-    public void setData(Object data) {
-        this.data = data;
-    }
 }
