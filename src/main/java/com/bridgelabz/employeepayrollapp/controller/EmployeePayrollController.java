@@ -15,7 +15,8 @@ import java.util.List;
 @RestController
 @RequestMapping("/employeepayrollservice")
 public class EmployeePayrollController {
-    /* UC-3 The Services Layer will store this Data in a Memory as a List.*/
+    
+    /* UC-1Use Lombok Library to auto generate getters and setters for the DTO*/
 @Autowired
  private IEmployeePayrollService employeePayrollService;
 
