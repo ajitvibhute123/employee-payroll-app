@@ -15,8 +15,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/employeepayrollservice")
 public class EmployeePayrollController {
-    
-    /* UC-2-Introducing Services Layer in Employee Payroll App */
+    /* UC-3 The Services Layer will store this Data in a Memory as a List.*/
 @Autowired
  private IEmployeePayrollService employeePayrollService;
 
