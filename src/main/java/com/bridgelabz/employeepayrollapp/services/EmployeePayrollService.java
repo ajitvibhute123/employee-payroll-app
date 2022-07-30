@@ -12,11 +12,7 @@ import java.util.List;
 public class EmployeePayrollService implements IEmployeePayrollService{
     /* UC-3 The Services Layer will store this Data in a Memory as a List.*/
     private List<EmployeePayrollData> employeePayrollList =new ArrayList<>();
-//    public EmployeeDetails createEmployeePayrollData(EmployeeDTO employeePayrollDTO) {
-//        EmployeeDetails empData = new EmployeeDetails(empDataList.size()+1,employeePayrollDTO);
-//        empDataList.add(empData);
-//        return empData;
-    //}
+
     @Override
     public List<EmployeePayrollData> getEmployeePayrollData() {
         return employeePayrollList;
@@ -32,8 +28,8 @@ public class EmployeePayrollService implements IEmployeePayrollService{
 
     @Override
     public EmployeePayrollData createEmployeePayrollData(EmployeePayrollDTO empPayrollDTO) {
-        EmployeePayrollData employeePayrollData = new EmployeePayrollData(employeePayrollList.size()+1, empPayrollDTO);;
-       
+        EmployeePayrollData employeePayrollData = null;
+        employeePayrollData = new EmployeePayrollData(1, empPayrollDTO);
         employeePayrollList.add(employeePayrollData);
         return employeePayrollData ;
     }
