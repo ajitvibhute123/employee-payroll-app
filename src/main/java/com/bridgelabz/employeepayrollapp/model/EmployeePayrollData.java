@@ -49,4 +49,7 @@ public @Data class EmployeePayrollData {
         this.department=employeePayrollDTO.department;
 
     }
+
+    public void updateEmployeePayrollData(EmployeePayrollDTO empPayrollDTO) {
+    }
 }
