@@ -1,32 +1,45 @@
 package com.bridgelabz.employeepayrollapp.model;
 
 import com.bridgelabz.employeepayrollapp.dto.EmployeePayrollDTO;
-import com.fasterxml.jackson.annotation.JsonFormat;
-
 import lombok.Data;
-import javax.persistence.Entity;
+import org.hibernate.annotations.Columns;
+
+import javax.persistence.ElementCollection;
+import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
-
+//@Entity Annotation tells Hibernate to create a table out of the Employee Payroll Class
+@Entity
+@Table(name = "employee_payroll")
 public @Data class EmployeePayrollData {
-    private int employeeID;
-    private  String name;
-    private  Long salary;
-    public String gender;
-   // @JsonFormat(pattern = "dd MMM yyyy")
-   // public LocalDate startDate;
-    @JsonFormat(pattern = "dd MMM yyyy")
-    public LocalDate startDate;
-    public String note;
-    public String profilePic;
-    private List<String> department;
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    @Column(name = "employee_id")
+    private int employeeID;
+
+    @Column(name = "name")
+    private  String name;
+    @Column(name = "Salary")
+    private  Long Salary;
+    @Column(name = "gender")
+    public String gender;
+    @Column(name = "Start_Date")
+    public LocalDate startDate;
+    @Column(name = "note")
+    public String note;
+    @Column(name = "profile_Pic")
+    public String profilePic;
+
+    @ElementCollection
+    @CollectionTable(name = "employee_department", joinColumns = @JoinColumn(name = "id"))
+    @Column(name = "department")
+    private List<String> department;
     public EmployeePayrollData() {}
 
-    public EmployeePayrollData(int empId, EmployeePayrollDTO employeePayrollDTO) {
-        this.employeeID = empId;
+    public EmployeePayrollData(EmployeePayrollDTO employeePayrollDTO) {
         this.name = employeePayrollDTO.name ;
-        this.salary= employeePayrollDTO.salary;
+        this.Salary= employeePayrollDTO.salary;
         this.gender = employeePayrollDTO.gender;
         this.startDate = employeePayrollDTO.startDate;
         this.note=employeePayrollDTO.note;

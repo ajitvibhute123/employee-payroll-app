@@ -20,10 +20,10 @@ public class EmployeePayrollAppApplication {
 
 		System.out.println("Welcome To Employee Payroll Service Application");
 		ApplicationContext context = SpringApplication.run(EmployeePayrollAppApplication.class,args);
-//		log.info("Employee Payroll App Started in {} Enivronment",
-//				context.getEnvironment().getProperty("environment"));
-//		log.info("Employee Payroll DB User is {}",
-//				context.getEnvironment().getProperty("spring.datasource.username"));
+		log.info("Employee Payroll App Started in {} Enivronment",
+				context.getEnvironment().getProperty("environment"));
+		log.info("Employee Payroll DB User is {}",
+				context.getEnvironment().getProperty("spring.datasource.username"));
 	}
 //	@Bean
 //	public Docket productApi() {
