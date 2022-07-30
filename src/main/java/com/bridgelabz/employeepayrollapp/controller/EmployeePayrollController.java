@@ -44,6 +44,14 @@ public class EmployeePayrollController {
         ResponseDTO respDTO=new ResponseDTO("Get Call For ID Successful", employeePayrollData);
         return new ResponseEntity<ResponseDTO>(respDTO, HttpStatus.OK);
     }
+
+    @GetMapping("/department/{department}")
+    public ResponseEntity<ResponseDTO> getEmployeePayrollData(@PathVariable("department") String department){
+        List<EmployeePayrollData> employeePayrollDataList = null;
+        employeePayrollDataList = employeePayrollService.getEmployeesByDepartment(department);
+        ResponseDTO responseDTO = new ResponseDTO("Get Call For ID Department Successful",employeePayrollDataList);
+        return new ResponseEntity<ResponseDTO>(responseDTO,HttpStatus.OK);
+    }
     /**
      * Method :- Method to Create the Employee Payroll Data.
      * param employeePayrollDTO :- passing employeePayrollDTO As Input.
