@@ -8,7 +8,9 @@ import javax.persistence.ElementCollection;
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
+
 //@Entity Annotation tells Hibernate to create a table out of the Employee Payroll Class
+
 @Entity
 @Table(name = "employee_payroll")
 public @Data class EmployeePayrollData {
